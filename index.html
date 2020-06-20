@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="input">
+        <form name="form">
+            <input type="text" name="calcscreen" readonly>
+        </form>
+    </div>
+    <div class="main">
+        <button class="buttons num one" onclick="insert('1')">1</button>
+        <button class="buttons num two" onclick="insert('2')">2</button>
+        <button class="buttons num three" onclick="insert('3')">3</button>
+        <button class="buttons math plas" onclick="insert('+')">+</button>
+    </div>
+    <div class="main">
+        <button class="buttons num four" onclick="insert('4')">4</button>
+        <button class="buttons num five" onclick="insert('5')">5</button>
+        <button class="buttons num six" onclick="insert('6')">6</button>
+        <button class="buttons math minus" onclick="insert('-')">-</button>
+    </div>
+    <div class="main">
+        <button class="buttons num seven" onclick="insert('7')">7</button>
+        <button class="buttons num eigth" onclick="insert('8')">8</button>
+        <button class="buttons num nine" onclick="insert('9')">9</button>
+        <button class="buttons math multi" onclick="insert('*')">*</button>
+    </div>
+    <div class="main">        
+        <button class="buttons num zero" onclick="insert('0')">0</button>
+        <button class="buttons special clearn" onclick="clearn()">C</button>
+        <button class="buttons special equal" onclick="equal()">=</button>
+        <button class="buttons math divison" onclick="insert('/')">/</button>
+    </div>
+    <script >
+        function insert(num){
+        document.form.calcscreen.value = document.form.calcscreen.value + num ;
+        }
+
+        function clearn(){
+            document.form.calcscreen.value = '';
+        }
+        function equal(){
+            let exp = document.form.calcscreen.value;
+            if(exp){
+                document.form.calcscreen.value = eval(exp);
+            }
+        }
+    </script>
+</body>
+</html>
